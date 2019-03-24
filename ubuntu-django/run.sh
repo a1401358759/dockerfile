@@ -2,7 +2,7 @@
 
 # install uwsgi and requirements
 pip install uwsgi==2.0.12
-pip install -r requirements.txt --extra-index-url https://pypi.zhengyitech.com/simple/
+pip install -r requirements.txt
 
 #TODO git pull
 

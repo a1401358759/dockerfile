@@ -20,7 +20,7 @@ fi
 # 更新代码，更新pip依赖，重启uwsgi服务
 if [ "$1" == "update_restart_uwsgi" ]; then
     git pull
-    ../venv/bin/pip install -r requirements.txt --extra-index-url https://pypi.zhengyitech.com/simple/ | grep -v "Requirement already satisfied"
+    ../venv/bin/pip install -r requirements.txt | grep -v "Requirement already satisfied"
     ../venv/bin/uwsgi --reload /var/run/uwsgi/project.pid
     exit
 fi
