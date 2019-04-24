@@ -3,8 +3,7 @@ FROM ubuntu:16.04
 LABEL name="ubuntu-python"
 LABEL version="1.0"
 
-RUN apt-get -y update && \
-    apt-get install -y \
+RUN apt-get install -y \
     bzip2-devel \
     freetype-devel \
     libjpeg-turbo-devel \
