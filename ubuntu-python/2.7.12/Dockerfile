@@ -4,20 +4,8 @@ LABEL name="ubuntu-python"
 LABEL version="1.0"
 
 RUN apt-get install -y \
-    bzip2-devel \
-    freetype-devel \
-    libjpeg-turbo-devel \
     git \
-    hostname \
-    openssl \
-    openssl-devel \
-    sqlite-devel \
-    sudo \
-    tar \
     curl \
-    zlib-dev \
-    python-devel \
-    mysql-devel \
     python-pip
 
 RUN apt-get clean all
