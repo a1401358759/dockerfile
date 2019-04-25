@@ -7,7 +7,8 @@ RUN apt-get update && \
     apt-get install -y \
     git \
     curl \
-    python-pip
+    python-pip \
+    locales
 
 RUN apt-get clean all
 
