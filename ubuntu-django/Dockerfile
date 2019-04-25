@@ -3,20 +3,6 @@ FROM ubuntu-python:1.0
 LABEL name="ubuntu-django"
 LABEL version="1.0"
 
-# install wkhtml2pdf
-RUN rpm --rebuilddb && apt-get -y update && \
-    apt-get install -y \
-        which \
-        fontconfig \
-        libpng \
-        libX11 \
-        libXext \
-        libXrender \
-        xorg-x11-fonts-Type1 \
-        xorg-x11-fonts-75dpi \
-        openldap-devel
-RUN apt-get clean all
-
 # 修改时区
 RUN rm -rf /etc/localtime
 RUN cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
