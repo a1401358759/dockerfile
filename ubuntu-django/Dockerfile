@@ -4,8 +4,8 @@ LABEL name="ubuntu-django"
 LABEL version="1.0"
 
 # 修改时区
-RUN rm -rf /etc/localtime
-RUN cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
+RUN echo "Asia/Shanghai" > /etc/timezone
+RUN dpkg-reconfigure -f noninteractive tzdata
 
 VOLUME ["/opt/django/project", "/opt/django/logs", "/opt/django/venv", "/root/.ssh"]
 EXPOSE 8000
