@@ -3,6 +3,8 @@ FROM ubuntu-python:1.0
 LABEL name="ubuntu-django"
 LABEL version="1.0"
 
+RUN apt-get install -y tzdata
+
 # 修改时区
 RUN echo "Asia/Shanghai" > /etc/timezone
 RUN dpkg-reconfigure -f noninteractive tzdata
