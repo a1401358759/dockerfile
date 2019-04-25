@@ -3,11 +3,12 @@ FROM ubuntu-python:1.0
 LABEL name="ubuntu-django"
 LABEL version="1.0"
 
-RUN apt-get install -y tzdata
-
 # 修改时区
-RUN echo "Asia/Shanghai" > /etc/timezone
-RUN dpkg-reconfigure -f noninteractive tzdata
+ENV TZ=Asia/Shanghai
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
+RUN apt-get update
+RUN apt-get install -y tzdata
+RUN dpkg-reconfigure --frontend noninteractive tzdata
 
 VOLUME ["/opt/django/project", "/opt/django/logs", "/opt/django/venv", "/root/.ssh"]
 EXPOSE 8000
