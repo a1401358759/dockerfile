@@ -8,9 +8,8 @@ RUN apt-get update && \
     git \
     curl \
     python-pip \
-    locales
-
-RUN apt-get clean all
+    locales \
+    libmysqlclient-dev
 
 RUN locale-gen zh_CN.UTF-8
 ENV LANG zh_CN.UTF-8
