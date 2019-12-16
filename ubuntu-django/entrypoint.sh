@@ -5,7 +5,7 @@ set -e
 VENV_DIR="/opt/django/venv"
 VENV_ACTIVATE_PATH="/opt/django/venv/bin/activate"
 if [ ! -d "$VENV_ACTIVATE_PATH" ]; then
-  virtualenv $VENV_DIR
+  virtualenv $VENV_DIR --python=python3.6
 fi
 source $VENV_ACTIVATE_PATH
 

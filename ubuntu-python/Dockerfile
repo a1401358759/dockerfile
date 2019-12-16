@@ -1,4 +1,4 @@
-FROM ubuntu:16.04
+FROM ubuntu:18.04
 
 LABEL name="ubuntu-python"
 LABEL version="1.0"
@@ -9,7 +9,10 @@ RUN apt-get update && \
     curl \
     python3-pip \
     locales \
-    libmysqlclient-dev
+    libmysqlclient-dev \
+    libssl-dev \
+    libcrypto++-dev \
+    python3-dev
 
 RUN locale-gen zh_CN.UTF-8
 ENV LANG zh_CN.UTF-8
