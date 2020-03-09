@@ -12,7 +12,8 @@ RUN apt-get update && \
     libmysqlclient-dev \
     libssl-dev \
     libcrypto++-dev \
-    python3-dev
+    python3-dev \
+    python3-mysqldb
 
 RUN locale-gen zh_CN.UTF-8
 ENV LANG zh_CN.UTF-8
