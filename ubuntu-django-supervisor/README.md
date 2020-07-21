@@ -1,13 +1,13 @@
 # Django supervisor 镜像说明（Docker）
 
-基于centos-django镜像构建专门用于跑celery、python后台脚本的supervisor镜像，镜像有如下特性：
-1. 新建卷，需做卷持久化：  
+基于ubuntu-django镜像构建专门用于跑celery、python后台脚本的supervisor镜像，镜像有如下特性：
+1. 新建卷，需做卷持久化：
     * /opt/django/project -- 代码路径
     * /opt/django/logs    -- 日志路径
     * /opt/django/venv    -- 虚拟环境
 2. 切换初始环境到 /opt/django/project
 3. 初始化virtualenv环境
-4. 执行run.sh（还需扩充）：   
+4. 执行run.sh（还需扩充）：
     * 安装pip依赖
     * 启动uwsgi
 5. 控制命令
